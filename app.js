@@ -30,9 +30,9 @@ app.get('/current/song', function(req, res){
 
 function buildOutput(user, result) {
     if(user === ovenBitsUser) {
-        return '*' + result.track + '* by *' + result.artist + '* is playing at the Oven Bits office. <' + result.albumArt + '>';
+        return '*' + result.track + '* by *' + result.artist + '* is playing at the Oven Bits office.';
     } else {
-        return '*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*. <' + result.albumArt + '>';
+        return '*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*.';
     }
 }
 
