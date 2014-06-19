@@ -25,9 +25,12 @@ RdioClient.prototype.getLastSongPlayed = function(user, callback) {
         callback('Could not retrieve last song played');
       }
 
+      var song = res.result.lastSongPlayed;
+
       callback(null, {
-        artist: res.result.lastSongPlayed.artist,
-        track: res.result.lastSongPlayed.name
+        artist: song.artist,
+        track: song.name,
+        albumArt: song.icon
       });
 
     }
