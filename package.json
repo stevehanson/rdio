@@ -4,7 +4,7 @@
   "description": "Simple service to retrieve last song played on Rdio",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
