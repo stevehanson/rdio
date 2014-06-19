@@ -7,9 +7,12 @@ var RdioClient = function(clientKey, clientSecret) {
 };
 
 RdioClient.prototype.getLastSongPlayed = function(user, callback) {
-  user = (user == null) ? 'stevehans' : user;
+  if(!user) {
+    callback('User not specified');
+    return;
+  }
 
-  return this.rdio.call('findUser', {
+  this.rdio.call('findUser', {
     'vanityName': user,
     'extras': 'lastSongPlayed'
   }, function(err, res) {
@@ -20,15 +23,16 @@ RdioClient.prototype.getLastSongPlayed = function(user, callback) {
 
       if(!res.result || !res.result.lastSongPlayed) {
         callback('Could not retrieve last song played');
+      } else {
+
+        var song = res.result.lastSongPlayed;
+
+        callback(null, {
+          artist: song.artist,
+          track: song.name,
+          albumArt: song.icon
+        });
       }
-
-      var song = res.result.lastSongPlayed;
-
-      callback(null, {
-        artist: song.artist,
-        track: song.name,
-        albumArt: song.icon
-      });
 
     }
   });

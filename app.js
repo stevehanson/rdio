@@ -7,16 +7,16 @@ var rdioClient = new RdioClient(rdioCreds.key, rdioCreds.secret);
 
 app.get('/current/song', function(req, res){
 
-  console.log('command is: ' + req.param('text'));
+  console.log('Incoming request for user: ' + req.param('text') || 'unspecified');
   var user =  req.param('text') || 'stevehans';
 
   rdioClient.getLastSongPlayed(user, function(err, result) {
 
     if(err) {
       res.send("Oh no! We couldn't get the last song for " + user + ". Error: " + err);
+    } else {
+      res.send('*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*.');
     }
-
-    res.send('*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*.');
 
   });
 
