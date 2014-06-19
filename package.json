@@ -1,0 +1,23 @@
+{
+  "name": "rdio",
+  "version": "0.0.0",
+  "description": "Simple service to retrieve last song played on Rdio",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/stevehanson/rdio.git"
+  },
+  "author": "Steve Hanson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevehanson/rdio/issues"
+  },
+  "homepage": "https://github.com/stevehanson/rdio",
+  "devDependencies": {
+    "express": "^4.4.3",
+    "oauth": "^0.9.12"
+  }
+}
