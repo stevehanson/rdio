@@ -8,7 +8,7 @@ var rdioClient = new RdioClient(rdioCreds.key, rdioCreds.secret);
 app.get('/current/song', function(req, res){
 
   console.log('Incoming request for user: ' + req.param('text') || 'unspecified');
-  var user =  req.param('text') || 'stevehans';
+  var user =  req.param('text') || 'ovenbits';
 
   rdioClient.getLastSongPlayed(user, function(err, result) {
 
