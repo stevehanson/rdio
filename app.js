@@ -5,6 +5,8 @@ app.get('/current/song', function(req, res){
   res.send('Bye Bye Bye by NSync');
 });
 
-var server = app.listen(9000, function() {
+var port = Number(process.env.PORT || 9000);
+
+var server = app.listen(port, function() {
     console.log('Listening on port %d', server.address().port);
 });
