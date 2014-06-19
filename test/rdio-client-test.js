@@ -12,7 +12,6 @@ describe('RdioClient', function() {
     rdioClient.getLastSongPlayed('stevehans', function(err, res) {
         error = err;
         result = res;
-        console.log(err);
         done();
       })
   })
