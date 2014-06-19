@@ -4,7 +4,7 @@
   "description": "Simple service to retrieve last song played on Rdio",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/stevehanson/rdio",
   "dependencies": {
+    "chai": "^1.9.1",
     "express": "^4.4.3",
+    "mocha": "^1.20.1",
     "node-rdio": "^0.1.1",
     "oauth": "^0.9.12"
   }

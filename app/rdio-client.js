@@ -14,9 +14,6 @@ RdioClient.prototype.getLastSongPlayed = function(user, callback) {
     'extras': 'lastSongPlayed'
   }, function(err, res) {
 
-    console.log(err);
-    console.log(res);
-
     if(err) {
       callback(err);
     } else {
