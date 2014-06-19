@@ -1,11 +1,12 @@
 'use strict';
 
 var expect = require('chai').expect,
+    rdioCreds = require('../rdio-credentials.js'), // you need to create this file! Not posting mine on github :)
     RdioClient = require('../app/rdio-client.js');
 
 describe('RdioClient', function() {
 
-  var rdioClient = new RdioClient('k78q9x9858wfexvyq5jqc9p8', 'G8aNvrfwcR');
+  var rdioClient = new RdioClient(rdioCreds.key, rdioCreds.secret);
   var error, result;
 
   beforeEach(function(done) {

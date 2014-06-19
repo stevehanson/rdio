@@ -1,6 +1,8 @@
 
+var rdioCreds = require('../rdio-credentials.js'); // you need to create this file! Not posting mine on github :)
 var Rdio = require("node-rdio");
-var rdio = new Rdio(["k78q9x9858wfexvyq5jqc9p8", "G8aNvrfwcR"]);
+var rdio = new Rdio([rdioCreds.key, rdioCreds.secret]);
+
 
 var RdioClient = function(clientKey, clientSecret) {
   this.rdio = new Rdio([clientKey, clientSecret]);
