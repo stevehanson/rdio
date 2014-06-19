@@ -1,8 +1,6 @@
 
 var rdioCreds = require('../rdio-credentials.js'); // you need to create this file! Not posting mine on github :)
 var Rdio = require("node-rdio");
-var rdio = new Rdio([rdioCreds.key, rdioCreds.secret]);
-
 
 var RdioClient = function(clientKey, clientSecret) {
   this.rdio = new Rdio([clientKey, clientSecret]);
@@ -11,7 +9,7 @@ var RdioClient = function(clientKey, clientSecret) {
 RdioClient.prototype.getLastSongPlayed = function(user, callback) {
   user = (user == null) ? 'stevehans' : user;
 
-  return rdio.call('findUser', {
+  return this.rdio.call('findUser', {
     'vanityName': user,
     'extras': 'lastSongPlayed'
   }, function(err, res) {

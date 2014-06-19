@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
+var rdioCreds = require('./rdio-credentials.js'); // you need to create this file! Not posting mine on github :)
 var RdioClient = require('./app/rdio-client');
 
-
-var rdioClient = new RdioClient('k78q9x9858wfexvyq5jqc9p8', 'G8aNvrfwcR');
-
+var rdioClient = new RdioClient(rdioCreds.key, rdioCreds.secret);
 
 app.get('/current/song', function(req, res){
 
@@ -17,7 +16,6 @@ app.get('/current/song', function(req, res){
       res.send("Oh no! We couldn't get the last song for " + user + ". Error: " + err);
     }
 
-    console.log(result);
     res.send('*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*.');
 
   });
