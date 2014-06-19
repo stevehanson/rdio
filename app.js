@@ -6,7 +6,7 @@ var RdioClient = require('./app/rdio-client');
 var rdioClient = new RdioClient('k78q9x9858wfexvyq5jqc9p8', 'G8aNvrfwcR');
 
 
-app.get('/current/song', function(req, res){
+app.post('/current/song', function(req, res){
 
   console.log('command is: ' + req.params.command);
 
