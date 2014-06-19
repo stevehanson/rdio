@@ -16,7 +16,7 @@
     "url": "https://github.com/stevehanson/rdio/issues"
   },
   "homepage": "https://github.com/stevehanson/rdio",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.4.3",
     "oauth": "^0.9.12"
   }
