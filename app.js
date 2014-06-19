@@ -14,10 +14,11 @@ app.get('/current/song', function(req, res){
   rdioClient.getLastSongPlayed(user, function(err, result) {
 
     if(err) {
-      res.send("Oh no! We couldn't get the last song for " + user + ":( Error: " + err);
+      res.send("Oh no! We couldn't get the last song for " + user + ". Error: " + err);
     }
 
-    res.send(user + " is listening to " + result.track + " by " + result.artist);
+    console.log(result);
+    res.send(user + " is listening to *" + result.track + "* by *" + result.artist + "*. (" + result.albumArt + ")");
 
   });
 
@@ -27,4 +28,3 @@ var port = Number(process.env.PORT || 9000);
 var server = app.listen(port, function() {
     console.log('Listening on port %d', server.address().port);
 });
-
