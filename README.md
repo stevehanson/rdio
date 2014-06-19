@@ -2,13 +2,11 @@
 
 Simple service to retrieve last song played on Rdio. Used for a Slackbot integration.
 
-To run, you need to register your own app with rdio and make a file called `rdio-credentials.js` in the root of the app with the following contents:
+To run, you need to have environment variables `RDIO_KEY` and `RDIO_SECRET` set, or specified in a `.env` file in the root of your project in the following format:
 
 ```
-module.exports = {
-    key: 'YOUR KEY',
-    secret: 'YOUR SECRET'
-}
+RDIO_KEY={your key}
+RDIO_SECRETD={your secret}
 ```
 
 Run with `node app.js`

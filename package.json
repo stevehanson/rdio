@@ -18,6 +18,7 @@
   "homepage": "https://github.com/stevehanson/rdio",
   "dependencies": {
     "chai": "^1.9.1",
+    "dotenv": "^0.2.8",
     "express": "^4.4.3",
     "mocha": "^1.20.1",
     "node-rdio": "^0.1.1",
