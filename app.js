@@ -18,7 +18,7 @@ app.get('/current/song', function(req, res){
     }
 
     console.log(result);
-    res.send('*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*. // ' + result.albumArt);
+    res.send('*' + user + '* is listening to *' + result.track + '* by *' + result.artist + '*.');
 
   });
 
