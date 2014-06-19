@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var rdioCreds = require('./rdio-credentials.js'); // you need to create this file! Not posting mine on github :)
 require('dotenv').load();
 var RdioClient = require('./app/rdio-client');
 
